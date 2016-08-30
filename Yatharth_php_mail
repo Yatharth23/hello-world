@@ -1,0 +1,56 @@
+	<section id="container">
+		<h2>Have a Query?<br>(Post it here)</h2>
+		<form name="hongkiat" id="hongkiat-form" method="post" action="#">
+		<div id="wrapping" class="clearfix">
+			<section id="aligned">
+			<input type="text" name="name" id="name" placeholder="Your name" autocomplete="off" tabindex="1" class="txtinput">
+		
+			<input type="email" name="email" id="email" placeholder="Your e-mail address" autocomplete="off" tabindex="2" class="txtinput">
+				
+			<input type="tel" name="telephone" id="telephone" placeholder="Phone number?(optional)" tabindex="4" class="txtinput">
+		
+			<textarea name="message" id="message" placeholder="Post the query" tabindex="5" class="txtblock"></textarea>
+			</section>
+			
+			<section id="aside" class="clearfix">
+			
+		</div>
+
+
+		<section id="buttons">
+			<input type="reset" name="reset" id="resetbtn" class="resetbtn" value="Reset">
+			<input type="submit" name="submit" id="submitbtn" class="submitbtn" tabindex="7" value="Submit this!">
+			<br style="clear:both;">
+		</section>
+		</form>
+	</section>
+<?php
+
+$to='yatharththakur2394@gmail.com';
+$subject = 'Query/feedback for Third Eye Foundation Of India';
+
+$name=$_POST['name'];
+$email=$_POST['email'];
+$telephone=$_POST['telephone'];
+$message = $_POST['message'];
+
+$body = <<<EMAIL
+
+Jai Sai Ram 
+
+My name is $name and i would like to say a few things:
+
+$message
+
+From $email
+
+EMAIL;
+
+$header = 'Mail from $name';
+
+if($_POST){
+mail($to , $subject , $body , $header);
+$feedback = 'Thanks for your precious time. We will reply to you shortly.'
+}
+
+?>	
